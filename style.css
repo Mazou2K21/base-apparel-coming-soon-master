@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+
+:root {
+	--red1: rgb(206, 151, 151);
+	--red2: rgb(249, 98, 98);
+	--red3: rgb(65, 58, 58);
+	
+	--grad1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+	--grad2: linear-gradient(135deg, hsl(0, 80%, 86%) 20%, hsl(0, 74%, 74%) 100%);
+	--grad3: linear-gradient(135deg, hsl(0, 80%, 86%), hsla(0, 52%, 80%, 0.781));
+	
+	--normal: 300;
+	--medium: 400;
+	--heavy: 600;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 16px;
+	background-image: var(--grad1);
+}
+
+header{
+    height: auto;
+}
+
+header img{
+    width: 150px;
+    margin: 30px 0 20px 30px;
+}
+
+.main{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+.main .main-content{
+    width: 100%;
+    height: auto;
+    padding: 50px 30px 0 30px;
+}
+
+.hero{
+    width: 100%;
+    height: 300px;
+    background-image: url(images/hero-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.main .main-content h1{
+    color: var(--red3);
+    font-size: 3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+.main .main-content h1 span{
+    color: var(--red1);
+    font-weight: 300;
+}
+
+.main .main-content p{
+    max-width: 500px;
+    margin: 20px auto 40px auto;
+    color: var(--red1);
+    line-height: 1.5rem;
+    font-size: 1rem;
+}
+
+.main .main-content form{
+    position: relative;
+    display: block;
+    height: 45px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.main .main-content form input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border-radius: 50px;
+    border: 1px solid var(--red1);
+    left: 0;
+    top: 0;
+    text-indent: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.1rem;
+    background: transparent;
+    opacity: 0.6;
+}
+
+.main .main-content form input::placeholder{
+    color: var(--red1);
+}
+
+.main .main-content form button{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background-image: var(--grad2);
+    box-shadow: 0px 0px 18px 1px rgba(249, 98, 98, 0.383);
+}
+
+.main .main-content form button:hover{
+    background-image: var(--grad3);
+	box-shadow: 0px 0px 13px 2px #f4aaabbf;
+}
+
+.main .main-content form .error-icon{
+    display: none;
+    position: absolute;
+    top: 25%;
+    right: 25%;
+}
+
+.main .main-content form .error-text{
+    position: absolute;
+    display: none;
+    top: 30px;
+    left: 20px;
+    font-size: 0.85rem;
+    color: var(--red2);
+}
+
+.main .main-content form.error .error-icon {
+	display: block;
+}
+
+.main .main-content form.error .error-text {
+	display: block;
+}
+
+@media (min-width: 801px) {
+    header{
+        position: absolute;
+        padding-left: 50px;
+    }
+
+    header img{
+        width: 150px;
+        margin: 40px 0 10px 10px;
+    }
+
+    .hero{
+        width: 50%;
+        height: 100vh;
+        background-image: url(images/hero-desktop.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .main{
+        flex-direction: row;
+        padding-top: 0;
+        padding-bottom: 0;
+        text-align: left;
+    }
+
+    .main .main-content{
+        height: 100vh;
+        padding-top: 30vh;
+        padding-left: 50px;
+        width: 60%;
+        background-image: url(images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .main .main-content h1{
+        font-size: 2.9rem;
+    }
+
+    .main .main-content p{
+        margin: 20px 0;
+        font-size: 0.9rem;
+    }
+
+    .main .main-content form{
+        margin: 0;
+    }
+}
+
+@media (min-width: 1080px) {
+    header img{
+        width: 180px;
+        margin: 50px 0 10px 40px;
+    }
+
+    .main .main-content{
+        padding-left: 90px;
+        padding-top: 28vh;
+    }
+
+    .main .main-content h1{
+        font-size: 3.5rem;
+    }
+
+    .main .main-content p{
+        font-size: 1.1rem;
+        max-width: 95%;
+    }
+
+    .main .main-content form{
+        width: 500px;
+    }
+}
+
+@media (min-width: 1600px) {
+    header img{
+        width: 220px;
+        margin: 50px 0 10px 130px;
+    }
+
+    .main .main-content{
+        padding-left: 220px;
+        padding-top: 28vh;
+    }
+
+    .main .main-content h1{
+        font-size: 4.5rem;
+    }
+
+    .main .main-content p{
+        font-size: 1.3rem;
+        line-height: 2rem;
+        max-width: 70%;
+        margin: 30px 0 50px 0;
+    }
+
+    .main .main-content form{
+        height: 55px;
+    }
+
+    .main .main-content form input{
+        font-size: 1.3rem;
+    }
+
+    .main .main-content form button{
+        width: 100px;
+    }
+}
+
+@media (min-width: 2000px) {
+    .main .main-content p{
+        font-size: 2rem;
+    }
+
+    .main .main-content form{
+        width: 600px;
+    }
+}
